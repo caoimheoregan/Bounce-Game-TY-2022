@@ -23,7 +23,7 @@ def start_game(event):
         file1.close()
         score.configure(text="Score: 00\n\nHighscore: " + highscore)
         canvas.delete("all")
-        BALL_COLOR = ["red", "yellow", "green"]
+        BALL_COLOR = ["pale violet red", "yellow", "green"]
         BRICK_COLOR = ["PeachPuff3", "dark slate gray", "rosy brown", "light goldenrod yellow", "turquoise3", "salmon",
                        "light steel blue", "dark khaki", "pale violet red", "orchid", "tan", "MistyRose2",
                        "DodgerBlue4", "wheat2", "RosyBrown2", "bisque3", "DarkSeaGreen1"]
@@ -77,7 +77,7 @@ def start_game(event):
                         file1 = open("highscore.txt","w")
                         file1.write(str(ball.hit))
                         file1.close()
-                    canvas.create_text(250, 250, text="GAME OVER!!\nYour score was: " + str(ball.hit), fill="red", font="Consolas 24 ")
+                    canvas.create_text(250, 250, text="game over :((\nYour score was: " + str(ball.hit), fill="red", font="Consolas 24 ")
                     root.update_idletasks()
                     root.update()
                     playing = False
