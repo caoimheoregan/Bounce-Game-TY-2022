@@ -23,13 +23,13 @@ def start_game(event):
         file1.close()
         score.configure(text="Score: 00\n\nHighscore: " + highscore)
         canvas.delete("all")
-        BALL_COLOR = ["pale violet red", "yellow", "green"]
-        BRICK_COLOR = ["PeachPuff3", "dark slate gray", "rosy brown", "light goldenrod yellow", "turquoise3", "salmon",
-                       "light steel blue", "dark khaki", "pale violet red", "orchid", "tan", "MistyRose2",
-                       "DodgerBlue4", "wheat2", "RosyBrown2", "bisque3", "DarkSeaGreen1"]
+        BALL_COLOR = ["pale violet red"]
+        BRICK_COLOR = ["turquoise3",
+                       "light steel blue", "pale violet red", "orchid", "MistyRose2",
+                       "DodgerBlue4"]
         random.shuffle(BALL_COLOR)
         # Colour of the paddle
-        paddle = Paddle(canvas, "blue")
+        paddle = Paddle(canvas, "MistyRose2")
         bricks = []
         for i in range(0, 5):
             b = []
@@ -63,7 +63,7 @@ def start_game(event):
                     time.sleep(0.01)
                     if ball.hit==95:
                         # You won message and colour
-                        canvas.create_text(250, 250, text="YOU WON !!", fill="yellow", font="Consolas 24 ")
+                        canvas.create_text(250, 250, text="winner!!", fill="white", font="Consolas 24 ")
                         root.update_idletasks()
                         root.update()
                         playing = False
