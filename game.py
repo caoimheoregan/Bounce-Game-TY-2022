@@ -25,7 +25,7 @@ def start_game(event):
         canvas.delete("all")
         BALL_COLOR = ["pale violet red"]
         BRICK_COLOR = ["turquoise3",
-                       "light steel blue", "pale violet red", "orchid", "MistyRose2",
+                       "light steel blue", "pale violet red",
                        "DodgerBlue4"]
         random.shuffle(BALL_COLOR)
         # Colour of the paddle
@@ -63,7 +63,7 @@ def start_game(event):
                     time.sleep(0.01)
                     if ball.hit==95:
                         # You won message and colour
-                        canvas.create_text(250, 250, text="winner!!", fill="white", font="Consolas 24 ")
+                        canvas.create_text(250, 250, text="winner!!", fill="MistyRozse2", font="Consolas 24 ")
                         root.update_idletasks()
                         root.update()
                         playing = False
@@ -77,7 +77,7 @@ def start_game(event):
                         file1 = open("highscore.txt","w")
                         file1.write(str(ball.hit))
                         file1.close()
-                    canvas.create_text(250, 250, text="game over :((\nYour score was: " + str(ball.hit), fill="red", font="Consolas 24 ")
+                    canvas.create_text (50, 250, text="game over :((\nYour score was: " + str(ball.hit), fill="red", font="Consolas 24 ")
                     root.update_idletasks()
                     root.update()
                     playing = False
@@ -87,7 +87,7 @@ def start_game(event):
                     if m==None:pass
                 except:
                     # Pause message and colour
-                    m=canvas.create_text(250, 250, text="Paused", fill="blue", font="Consolas 24 ")
+                    m=canvas.create_text(250, 250, text="you paused the game :(", fill="blue", font="Consolas 24 ")
                 root.update_idletasks()
                 root.update()
 
